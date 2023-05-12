@@ -10,7 +10,7 @@ mixin menuItem(link, text, isExpClass = "")
 include mobmenu.html
 header(class="hdr " + (config.hdrClassName ? config.hdrClassName : "hdr__white")).jsHdrBase
     .jsHdrLine
-        include ../../includes/promotion_banner.html
+        include top_banner
         .hdr__wrap.flexi
             button.hdr__burger(data-menumodal="#jsMenuModal")
                 img(src="/img/menu.svg", alt="")
