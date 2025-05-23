@@ -11,7 +11,9 @@
         </div>
 
         {% assign major_version = site.attrs.version | split: "." | first %}
-
+        {% if site.attrs.section == 'extensions' %}
+        <div id="search-button"></div>
+        {% else %}
         <select id="product-selector">
             <option value="/docs/latest" {% if major_version == '2' %}selected{% endif %}>Ignite 2</option>
             <option value="/docs/ignite3/latest"{% if major_version == '3' %}selected{% endif %}>Ignite 3</option>
@@ -60,11 +62,8 @@
         </nav>
 
 
-        <form class='search'>
-            <button class="search-close" type='button'><img src='{{"assets/images/cancel.svg"|relative_url}}' alt="close" width="10" height="10" /></button>
-            <input type="search" placeholder="Search…" id="search-input">
-        </form>
-        
+
+        <div id="search-button"></div>
 
         <nav id="lang-selector"><ul>
             <li><a href="#"><img src="{{'assets/images/icon_lang_en_75x75.jpg'|relative_url}}" alt="English language icon"  width="25" height="25" /><span>▼</span></a>
@@ -76,8 +75,9 @@
         </nav>
 
         <button type='button' class='top-nav-toggle'>⋮</button>
-
-        
-        
+        {% endif %}
+    </div>
+    <div id="search-wrapper">
+        <div id="search"></div>
     </div>
 </header>
